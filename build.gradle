@@ -11,7 +11,7 @@ repositories {
 }
 
 test {
-    // Disable the test report for the individual test task
+    // Enable the test report for the individual test task
     reports.html.enabled = true
     reports.junitXml.enabled = true
     //Display log Streams as tests are being Run (Instead of collecting them and displaying them after all Tests are run)
@@ -43,9 +43,6 @@ dependencies {
     
     testRuntime group: 'org.xerial', name: 'sqlite-jdbc', version: '3.21.0.1'
     testRuntime group: 'com.zsoltfabok', name: 'sqlite-dialect', version: '1.0'
-    //testRuntime group: 'org.hibernate.dialect', name: 'sqlite-dialect', version: '0.1.0'//Did Not Work
-    
-    runtime group: 'org.postgresql', name:'postgresql', version: '42.1.4'
     
     runtime group: 'org.hibernate', name: 'hibernate-java8', version: '5.2.7.Final'
     runtime group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.10.0'
