@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration name="email_Logging" status="INFO">
+    <appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout
+                pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %logger %c{1} - %msg%n" />
+        </Console>
+    </appenders>
+    
+    <loggers>
+        
+        <Logger name="org.springframework.transaction" level="INFO" additivity="false">
+            <AppenderRef ref="console" />
+        </Logger>
+        
+        <Logger name="org.hibernate.engine.transaction" level="INFO" additivity="false">
+            <appender-ref ref="console"/>
+        </Logger>
+        
+        <Logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
+            <appender-ref ref="console"/>
+        </Logger>
+
+        <Logger name="org.hibernate.type" level="INFO" additivity="false">
+            <appender-ref ref="console"/>
+        </Logger>
+        
+        <Logger name="org.springframework.data.redis" level="DEBUG" additivity="false">
+            <appender-ref ref="console"/>
+        </Logger>
+        
+        <Logger name="redis.clients" level="DEBUG" additivity="false">
+            <appender-ref ref="console"/>
+        </Logger>
+        
+        <Logger name="org.springframework.test" level="OFF" additivity="false">
+            <appender-ref ref="console"/>
+        </Logger>
+        
+        <root level="INFO">
+            <appender-ref ref="console"/>
+        </root>
+        
+    </loggers>
+</configuration>
+
